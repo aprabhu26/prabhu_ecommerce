@@ -30,6 +30,7 @@ view: order_items {
     type: number
     sql: ${TABLE}.sale_price ;;
     value_format_name: usd
+    hidden: yes
   }
 
   measure: total_revenue {
