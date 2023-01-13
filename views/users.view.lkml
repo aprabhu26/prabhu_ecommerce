@@ -101,6 +101,12 @@ view: users {
     sql: ${age} ;;
   }
 
+  measure: average_of_age_distinct{
+    type: average_distinct
+    sql_distinct_key: ${first_name} ;;
+    sql: ${age} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, last_name, first_name, orders.count]
