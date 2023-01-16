@@ -96,10 +96,11 @@ view: users {
     sql: ${age} ;;
   }
 
-  measure: average_of_age {
-    type: average
+  measure: sum_age {
+    type:sum
     sql: ${age} ;;
   }
+
 
   measure: average_of_age_distinct{
     type: average_distinct
