@@ -4,8 +4,8 @@ connection: "dcl-looker-data"
 include: "/views/**/*.view"
 
 datagroup: ecommerce_prabhu_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  sql_trigger: select 10;;
+  # MAX(id) FROM etl_log;;
 }
 
 persist_with: ecommerce_prabhu_default_datagroup
@@ -51,8 +51,10 @@ explore: orders {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
+
   }
 }
+
 
 explore: inventory_items {
   join: products {
@@ -64,7 +66,8 @@ explore: inventory_items {
 
 explore: employee_master {}
 
-explore: products {}
+explore: products {
+}
 
 explore: inventory_items_vijaya {
   join: products {
