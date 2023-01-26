@@ -36,7 +36,8 @@ view: order_items {
   measure: total_revenue {
     type: sum
     sql: ${sale_price};;
-    #html: {% if value>1000 %} ;;
+    html: {% if value>1000 %}
+    {% endif %};;
     #value_format_name: usd
   }
 

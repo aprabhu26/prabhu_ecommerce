@@ -62,6 +62,10 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
+    link: {
+      label: "Google"
+      url: "https://www.google.com/search?q={{ value }}"
+    }
   }
 
   dimension: traffic_source {

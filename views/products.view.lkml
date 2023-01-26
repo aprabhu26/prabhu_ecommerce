@@ -48,4 +48,14 @@ view: products {
     type: count
     drill_fields: [id, item_name, product_sheets.count, inventory_items.count, inventory_items_vijaya.count]
   }
+
+  measure: sum_retail_price {
+    type: sum
+    sql: ${retail_price} ;;
+    html: {% if value > 10000%}
+    <font color="darkgreen">{{ rendered_value }}</font>
+    {%else%}
+    <font color="darkred">{{ rendered_value }}</font>
+    {% endif %};;
+  }
 }
