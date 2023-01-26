@@ -11,7 +11,7 @@ view: users {
 
   dimension: age {
     type: number
-    sql: ${TABLE}.age ;;
+    sql: ${TABLE}.age;;
   }
 
   dimension: city {
@@ -81,7 +81,7 @@ view: users {
 
   dimension: length_user_name {
     type: string
-    sql: length(${full_name}) ;;
+    sql: length(${full_name});;
   }
 
   dimension: len_user_name_without_spaces{

@@ -30,13 +30,14 @@ view: order_items {
     type: number
     sql: ${TABLE}.sale_price ;;
     value_format_name: usd
-    hidden: yes
+    #hidden: yes
   }
 
   measure: total_revenue {
     type: sum
-    sql: ${sale_price} ;;
-    value_format_name: usd
+    sql: ${sale_price};;
+    #html: {% if value>1000 %} ;;
+    #value_format_name: usd
   }
 
   measure: count {

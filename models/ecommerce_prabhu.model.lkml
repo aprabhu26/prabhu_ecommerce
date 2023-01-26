@@ -1,11 +1,11 @@
-connection: "dcl-looker-data"
+connection: "looker-dcl-data"
 
 # include all the views
 include: "/views/**/*.view"
 
 datagroup: ecommerce_prabhu_default_datagroup {
-  sql_trigger: select 10;;
-  # MAX(id) FROM etl_log;;
+  #sql_trigger: MAX(id) FROM etl_log;;
+  max_cache_age: "1 hour"
 }
 
 persist_with: ecommerce_prabhu_default_datagroup
@@ -65,6 +65,31 @@ explore: inventory_items {
 }
 
 explore: employee_master {}
+
+explore: sql_derived_table {
+  join: users {
+    type: left_outer
+    sql_on: ${users.city} = ${sql_derived_table.users_city};;
+    relationship: many_to_one
+  }
+}
+
+explore: native_derived_table {
+  join: users {
+    type: left_outer
+    sql_on: ${users.city} = ${native_derived_table.city};;
+    relationship: many_to_one
+  }
+}
+
+explore: ndt {
+  join: users {
+    type: left_outer
+    sql_on: ${users.city} = ${ndt.city};;
+    relationship: many_to_one
+  }
+}
+
 
 explore: products {
 }
