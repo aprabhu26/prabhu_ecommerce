@@ -11,7 +11,7 @@ view: ndt {
     type: number
   }
   dimension: city {
-    description: "cityname"
+    description: "citynam"
   }
   measure: avg_count_city {
     type: average
