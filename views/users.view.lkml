@@ -62,7 +62,7 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
-    html: <a href="https://www.google.com/search?q={{value|url_encode}}">{{value}}</a>} ;;
+    html: <a href="https://www.google.com/search?q={{value|url_encode}}">{{value}}</a>;;
     #link: {
       #label: "Google"
       #url: "https://www.google.com/search?q={{ value }}"
